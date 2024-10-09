@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Primer Backend",
+  "main": "Index.js",
+  "scripts": {
+    "start": "node Index.js",
+    "dev": "nodemon Index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "PRUEBA 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0",
+    "install": "^0.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
