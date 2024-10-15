@@ -43,9 +43,8 @@ const register = (req, res) => {
 
 const GetUserById = async (req, res) => {
   const {id} = req.params;
-  const user = await UserModel.findById(id);
+  const user = await UserModel.findById(id).populate("Projects");
 
-  console.log("user",user);
   
   try {
     res.status (HttpCodes.OK).json ({
