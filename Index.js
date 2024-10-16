@@ -27,7 +27,7 @@ app.use(morgan ('dev'));
 //configurar mi endpoint o  rutas 
 app.get('/', (req, res) => {
   res.status(HttpCodes.OK).json({
-      message: " Server Is running "
+      message: "Server Is running "
     }
   )
 });
@@ -38,7 +38,7 @@ app.use('/users' , userRouter);
 
 //SERVER
 app.listen(PORT, ()  => { 
-  console.log('Server running on http://localhost:${PORT}');
+  console.log(`Server running on http://localhost:${PORT}`);
 });
   
 

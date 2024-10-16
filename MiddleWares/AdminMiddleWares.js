@@ -12,5 +12,5 @@ const AdminMiddleware = (req,res,next) => {
     }
 };
 
-Module.exports = AdminMiddleware;
+module.exports = AdminMiddleware;
 

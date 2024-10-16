@@ -76,14 +76,15 @@ const CreateUser = async(req, res) => {
 
          res.status(HttpCodes.CREATED).json({
             data:{
-            email:body.email,
-            name:body.name,
+            email:email,
+            name:name,
       },
       error : null,
       message: "User created",
     });
     } catch  (error) {
-    res.status (HtppCodes.INTERNAL_SERVER_ERROR).json ({
+      console.log(error)
+    res.status (HttpCodes.INTERNAL_SERVER_ERROR).json ({
       data:null,
       Error:error,
       message: " Error creating Users",

@@ -21,7 +21,7 @@ const GetAllProjects = async(req , res ) => {
     }
 };
 
-const CreateProjects = async (Req, Res)=> { 
+const CreateProjects = async (req, res)=> { 
     const {title,description,status,UserId} = req.body
         
     try {
@@ -47,7 +47,7 @@ const CreateProjects = async (Req, Res)=> {
 
         await user.save();
 
-        res.status (HttpCodes.CREATED).JSON ({
+        res.status (HttpCodes.CREATED).json ({
             data: newProject,
             error: null,
             message: " Project Created"
@@ -55,8 +55,8 @@ const CreateProjects = async (Req, Res)=> {
 
     } catch ( error) {
         console.log(error);
-        res.status (HttpCodes.INTERNAL_SERVER_ERROR).JSON ({
-            data: newProject,
+        res.status (HttpCodes.INTERNAL_SERVER_ERROR).json ({
+            data: null,
             error: null,
             message: " error creating project ",
         });
