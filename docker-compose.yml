@@ -1,0 +1,35 @@
+name: JessephRB26
+
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: JSBUser
+      MONGO_INITDB_ROOT_PASSWORD: JSBPass
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mongo-network
+
+  mongo-express:
+    container_name: mongo_express
+    image: mongo-express:latest
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGDB_PORT: 27017
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+    networks:
+      - mongo-network
+
+volumes:
+  mongo-data:
+networks:
+  mongo-network:
